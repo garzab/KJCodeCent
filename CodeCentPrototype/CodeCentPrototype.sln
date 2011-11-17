@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCentPrototype", "CodeCentPrototype\CodeCentPrototype.csproj", "{99d71b1b-ebd3-4065-8f7a-7f239be1794d}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
