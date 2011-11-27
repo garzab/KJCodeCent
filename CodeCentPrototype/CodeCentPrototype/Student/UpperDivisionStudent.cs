@@ -5,9 +5,9 @@ using System.Text;
 
 namespace CodeCentPrototype
 {
-    public class UpperDivisionStudent : Student
+    public class UpperDivisionStudent// : Student
     {
-
+        /*
         public override int ArchiveStudent()
         {
             return 0; // FIXME
@@ -17,6 +17,6 @@ namespace CodeCentPrototype
         {
             return 0; // FIXME
         }
-
+        */
     }
 }

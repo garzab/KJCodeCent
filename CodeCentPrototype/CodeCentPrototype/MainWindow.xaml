@@ -462,7 +462,7 @@
 		</ComboBox>
 		<TextBox HorizontalAlignment="Left" Margin="8,75.96,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="184.553" FontSize="16" Height="28"/>
 		<Button Content="Go" HorizontalAlignment="Left" Margin="196.553,76.68,0,0" VerticalAlignment="Top" Width="38.447" Background="{x:Null}" FontSize="16"/>
-		<ListBox x:Name="listStudents" HorizontalAlignment="Left" Margin="8,107.96,0,160" Width="227" FontSize="16"/>
+		<ListBox x:Name="listStudents" HorizontalAlignment="Left" Margin="8,107.96,0,160" Width="227" FontSize="16" SelectionChanged="listStudents_SelectionChanged" />
 		<Menu Height="28" VerticalAlignment="Top"/>
 		<ComboBox x:Name="comboClassStanding_Copy1" Margin="8,0,0,44.72" VerticalAlignment="Bottom" Background="{x:Null}" HorizontalAlignment="Left" Width="227" Height="28" SelectedIndex="0" FontSize="16">
 			<ComboBoxItem Content="Program"/>

@@ -5,8 +5,9 @@ using System.Text;
 
 namespace CodeCentPrototype
 {
-    public class FirstYearStudent : Student
+    public class FirstYearStudent// : Student
     {
+        /*
         public override int ArchiveStudent()
         {
             return 0; // FIXME
@@ -16,6 +17,7 @@ namespace CodeCentPrototype
         {
             return 0; // FIXME
         }
+        */
 
     }
 }

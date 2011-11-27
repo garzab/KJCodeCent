@@ -16,11 +16,15 @@ namespace CodeCentPrototype
     {
         private MainWindow windowRef;
         private DBController dbConn;
+        private List<Student> StudentList;
+        private Student SelectedStudent; 
+
 
         public StudentPresenter(MainWindow reference)
         {
             windowRef = reference;
             dbConn = new DBController();
+            StudentList = new List<Student>();
         }
 
         public void SelectedYearChanged(object sender, SelectionChangedEventArgs e)
@@ -45,20 +49,39 @@ namespace CodeCentPrototype
                 /*
                  * This is only temporary! Need basic UI functionality for midterm presentation
                  */
-                List<string> students = new List<string>();
-                string title = "";
                 for (int i = 0; i < studentInfo.Rows.Count; i++)
                 {
-                    title = studentInfo.Rows[i].ItemArray.ElementAt(4).ToString();
-                    title += ", ";
-                    title += studentInfo.Rows[i].ItemArray.ElementAt(2).ToString();
-                    students.Add(title);
+                    StudentList.Add(new Student(studentInfo.Rows[i]));
                 }
-                students.Sort();
-                windowRef.listStudents.ItemsSource = students;                
+
+
+                windowRef.listStudents.ItemsSource = StudentList;
+                windowRef.listStudents.DisplayMemberPath = "DisplayString";
             }
 
         }
+        public void selectedStudentChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            SelectedStudent = windowRef.listStudents.SelectedItem as Student;
+            windowRef.textFirstName.Text = SelectedStudent.FirstName;
+            windowRef.textLastName.Text = SelectedStudent.LastName;
+            windowRef.textCellPhone.Text = SelectedStudent.CellPhone;
+            windowRef.textHomePhone.Text = SelectedStudent.HomePhone;
+            windowRef.textMiddleInitial.Text = SelectedStudent.MiddleInitial;
+            windowRef.textStudentID.Text = SelectedStudent.StudentID.ToString();
+            windowRef.textAddress.Text = SelectedStudent.StreetAddress;
+            windowRef.textCity.Text = SelectedStudent.City;
+            windowRef.textZIPCode.Text = SelectedStudent.Zip.ToString();
+            windowRef.textCWUEmailAddress.Text = SelectedStudent.CWUEmail;
+            windowRef.textEmailAddress.Text = SelectedStudent.StandardEmail;
+            windowRef.textBirthday.Text = SelectedStudent.Birthday;
+            windowRef.textComments.Text = SelectedStudent.Notes;
+
+
+        }
+
+
 
         // TO DO: Add presentation logic
     }

@@ -27,7 +27,7 @@ namespace CodeCentPrototype
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            // Populate year list with current year, previous 'x' years
-            // Set comboYear to currentYear      
+                 
             
             stPresenter = new StudentPresenter(this);
 
@@ -44,6 +44,12 @@ namespace CodeCentPrototype
         {
             if(stPresenter != null)
                 stPresenter.SelectedYearChanged(sender, e);
+        }
+
+        private void listStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(stPresenter != null)
+                stPresenter.selectedStudentChanged(sender, e);
         }
 
 
