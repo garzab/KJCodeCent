@@ -37,7 +37,7 @@ namespace CodeCentPrototype {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MASTER")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DHCDB")]
         public string DBInstance {
             get {
                 return ((string)(this["DBInstance"]));

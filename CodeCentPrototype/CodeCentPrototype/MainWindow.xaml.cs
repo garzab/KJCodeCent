@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
+using System.Windows.Input; 
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -27,9 +27,17 @@ namespace CodeCentPrototype
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            // Populate year list with current year, previous 'x' years
-           // Set comboYear to currentYear
+            // Set comboYear to currentYear      
+            
             stPresenter = new StudentPresenter(this);
 
+            //Load current year student list
+            string now = DateTime.Now.Year.ToString();
+            for(int i=0; i < this.comboYear.Items.Count; i++){
+                ComboBoxItem x = (ComboBoxItem)this.comboYear.Items.GetItemAt(i);
+                if (x.Content.ToString() == now)
+                    this.comboYear.SelectedIndex = i;
+            }
         }
 
         private void comboYear_SelectionChanged(object sender, SelectionChangedEventArgs e)

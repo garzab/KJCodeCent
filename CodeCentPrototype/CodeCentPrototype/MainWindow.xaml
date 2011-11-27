@@ -5,7 +5,7 @@
 	x:Class="CodeCentPrototype.MainWindow"
 	x:Name="Window"
 	Title="MainWindow"
-	Width="1280" Height="1024" Loaded="Window_Loaded">
+	Width="1280" Height="1024" Loaded="Window_Loaded" WindowState="Maximized">
 
 	<Grid x:Name="LayoutRoot">
 		<TabControl Margin="239,75.96,8,8">
@@ -474,5 +474,21 @@
 			<ComboBoxItem Content="DHC"/>
 			<ComboBoxItem Content="CWU"/>
 		</ComboBox>
-	</Grid>
+        <Menu IsMainMenu="True" HorizontalAlignment="Left" Name="menuBar" VerticalAlignment="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New Student" />
+                <MenuItem Header="_Backup" />
+                <MenuItem Header="_Restore" />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Cut" Command="Cut"/>
+                <MenuItem Header="_Copy" Command="Copy"/>
+                <MenuItem Header="_Paste" Command="Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
 </Window>

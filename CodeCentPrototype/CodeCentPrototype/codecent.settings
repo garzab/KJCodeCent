@@ -6,7 +6,7 @@
       <Value Profile="(Default)">localhost\SQLEXPRESS</Value>
     </Setting>
     <Setting Name="DBInstance" Type="System.String" Scope="User">
-      <Value Profile="(Default)">MASTER</Value>
+      <Value Profile="(Default)">DHCDB</Value>
     </Setting>
   </Settings>
 </SettingsFile>
