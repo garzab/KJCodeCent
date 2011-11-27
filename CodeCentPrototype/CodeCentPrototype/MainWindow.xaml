@@ -5,7 +5,7 @@
 	x:Class="CodeCentPrototype.MainWindow"
 	x:Name="Window"
 	Title="MainWindow"
-	Width="1280" Height="1024">
+	Width="1280" Height="1024" Loaded="Window_Loaded">
 
 	<Grid x:Name="LayoutRoot">
 		<TabControl Margin="239,75.96,8,8">
@@ -447,7 +447,7 @@
 				</Grid>
 			</TabItem>
 		</TabControl>
-		<ComboBox x:Name="comboYear" HorizontalAlignment="Left" Margin="8,0,0,8.28" VerticalAlignment="Bottom" Width="227" Background="{x:Null}" Height="28" SelectedIndex="0" FontSize="16">
+        <ComboBox x:Name="comboYear" x:FieldModifier="public" HorizontalAlignment="Left" Margin="8,0,0,8.28" VerticalAlignment="Bottom" Width="227" Background="{x:Null}" Height="28" SelectedIndex="0" FontSize="16" SelectionChanged="comboYear_SelectionChanged">
 			<ComboBoxItem Content="Year"/>
 			<ComboBoxItem Content="2011"/>
 			<ComboBoxItem Content="2010"/>

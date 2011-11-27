@@ -28,3 +28,14 @@ C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCent
 C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCentPrototype.g.resources
 C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCentPrototype.exe
 C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCentPrototype.pdb
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCentPrototype.exe
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCentPrototype.pdb
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\bin\Debug\CodeCentPrototype.exe
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\bin\Debug\CodeCentPrototype.pdb
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\MainWindow.baml
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\MainWindow.g.cs
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\App.g.cs
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCentPrototype_MarkupCompile.cache
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\Debug\CodeCentPrototype.g.resources
+C:\Users\Owner\KJCodeCent\KJCodeCent\CodeCentPrototype\CodeCentPrototype\bin\Debug\CodeCentPrototype.exe.config

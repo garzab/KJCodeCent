@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="codecent.cs" />
+    <Compile Include="codecent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>codecent.settings</DependentUpon>
+    </Compile>
     <Compile Include="Courses\Course.cs" />
     <Compile Include="Courses\CourseHandler.cs" />
     <Compile Include="DBController.cs" />
@@ -82,8 +88,13 @@
       <SubType>Code</SubType>
     </Compile>
     <AppDesigner Include="Properties\" />
+    <None Include="app.config" />
     <None Include="Application.ico">
       <Visible>false</Visible>
+    </None>
+    <None Include="codecent.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>codecent.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />

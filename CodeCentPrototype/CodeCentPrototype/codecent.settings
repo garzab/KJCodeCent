@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CodeCentPrototype" GeneratedClassName="codecent">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost\SQLEXPRESS</Value>
+    </Setting>
+    <Setting Name="DBInstance" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MASTER</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
