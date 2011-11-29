@@ -12,7 +12,7 @@
             <RowDefinition Height="259*"/>
         </Grid.RowDefinitions>
 
-        <ribbon:Ribbon x:Name="Ribbon" Margin="0,0,0,65">
+        <ribbon:Ribbon x:Name="Ribbon" Margin="0,0,0,65" SelectionChanged="Ribbon_SelectionChanged">
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:RibbonApplicationMenu Label="File" IsMainMenu="True" SmallImageSource="/WpfRibbonApplication1;component/Images/fileSmall.png">
                     <ribbon:RibbonApplicationMenuItem Header="Exit"
@@ -158,30 +158,30 @@
                     <TextBox x:Name="textAI" Margin="63,336,468,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28"/>
                     <TextBox x:Name="textSAT" Margin="63,378,468,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28"/>
                     <TextBox x:Name="textACT" Margin="64.68,414.68,468.027,422.08" TextWrapping="Wrap"/>
-                    <ComboBox x:Name="comboClassStanding" Margin="140.083,41.32,0,0" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Left" Width="280.537" Height="28">
+                    <ComboBox x:Name="comboClassStanding" Margin="140.083,41.32,0,0" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Left" Width="280.537" Height="28" IsEditable="True">
                         <ComboBoxItem Content="1 First Year"/>
                         <ComboBoxItem Content="2 Sophomore"/>
                         <ComboBoxItem Content="3 Junior"/>
                         <ComboBoxItem Content="4 Senior"/>
                     </ComboBox>
                     <TextBox x:Name="textDateOfDirectorAction" Margin="0,0,302,191" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="197.847" Height="28"/>
-                    <ComboBox x:Name="comboCurrentCWUStudent" Margin="192.077,120.74,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="127.31">
+                    <ComboBox x:Name="comboCurrentCWUStudent" Margin="192.077,120.74,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="127.31" IsEditable="True">
                         <ComboBoxItem Content="Yes"/>
                         <ComboBoxItem Content="No"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboFirstYearorUDSE" Margin="172.783,162.7,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="247.837">
+                    <ComboBox x:Name="comboFirstYearorUDSE" Margin="172.783,162.7,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="247.837" IsEditable="True">
                         <ComboBoxItem Content="Upper-Division A&amp;H"/>
                         <ComboBoxItem Content="Upper-Division SHP"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboCoreOrHybrid" Margin="140.083,204.66,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="280.537">
+                    <ComboBox x:Name="comboCoreOrHybrid" Margin="140.083,204.66,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="280.537" IsEditable="True">
                         <ComboBoxItem Content="DHC Breadth"/>
                         <ComboBoxItem Content="CWU Breadth"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboTransfer" Margin="0,162.42,382.59,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85.81" Background="{x:Null}">
+                    <ComboBox x:Name="comboTransfer" Margin="0,162.42,382.59,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85.81" Background="{x:Null}" IsEditable="True">
                         <ComboBoxItem Content="Yes"/>
                         <ComboBoxItem Content="No"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboCWUAppStatus" Margin="0,42.04,289.98,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11" Background="{x:Null}">
+                    <ComboBox x:Name="comboCWUAppStatus" Margin="0,42.04,289.98,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11" Background="{x:Null}" IsEditable="True">
                         <ComboBoxItem Content="AP"/>
                         <ComboBoxItem Content="AD"/>
                         <ComboBoxItem Content="PM"/>
@@ -190,14 +190,14 @@
                         <ComboBoxItem Content="Cancel-CWU"/>
                     </ComboBox>
                     <TextBox x:Name="textDateReceived" Margin="0,121.46,309.98,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11"/>
-                    <ComboBox x:Name="comboDirectorAction" Margin="145,0,0,191" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="256.363" Background="{x:Null}" Height="28">
+                    <ComboBox x:Name="comboDirectorAction" Margin="145,0,0,191" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="256.363" Background="{x:Null}" Height="28" IsEditable="True">
                         <ComboBoxItem Content="Warning"/>
                         <ComboBoxItem Content="Suspended"/>
                         <ComboBoxItem Content="Accepted"/>
                         <ComboBoxItem Content="Denied"/>
                     </ComboBox>
                     <Label x:Name="labelGraduatedOrWithdrawn" Content="Status in Program" HorizontalAlignment="Left" Margin="16,243.84,0,0" FontSize="16" Height="32" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="comboGraduatedOrWithdrawn" Margin="172.783,247.84,0,0" Background="{x:Null}" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="247.837">
+                    <ComboBox x:Name="comboGraduatedOrWithdrawn" Margin="172.783,247.84,0,0" Background="{x:Null}" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="247.837" IsEditable="True">
                         <ComboBoxItem Content="Completed Breath Requirements"/>
                         <ComboBoxItem Content="Graduated"/>
                         <ComboBoxItem Content="Withdrawn">
@@ -218,9 +218,9 @@
             </TabItem>
             <TabItem Header="Course Grades" Background="{x:Null}" FontSize="16">
                 <Grid Background="White">
-                    <GroupBox Header="SHP Courses" Margin="9,421,7,0" Height="95.78" VerticalAlignment="Top">
+                    <GroupBox Name="SHPCourseGroupbox" Header="SHP Courses" Margin="9,421,7,0" Height="95.78" VerticalAlignment="Top">
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="72,19,0,0" Name="combo140_Copy16" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="72,19,0,0" Name="comboSHP399" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -235,7 +235,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="264,19,0,0" Name="combo140_Copy17" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="264,19,0,0" Name="comboSHP401" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -250,11 +250,11 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="458,21,435,0" Name="combo140_Copy18" VerticalAlignment="Top">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="458,21,435,0" Name="comboSHP497" VerticalAlignment="Top" IsEditable="True">
                                 <ComboBoxItem Content="Pass" />
                                 <ComboBoxItem Content="Fail" />
                             </ComboBox>
-                            <Label Content="301" FontSize="16" HorizontalAlignment="Left" Margin="25,19,0,0" Name="label141_Copy15" VerticalAlignment="Top" />
+                            <Label Content="399" FontSize="16" HorizontalAlignment="Left" Margin="25,19,0,0" Name="label141_Copy15" VerticalAlignment="Top" />
                             <Label Content="401" FontSize="16" HorizontalAlignment="Left" Margin="220,19,0,0" Name="label141_Copy16" VerticalAlignment="Top" />
                             <Label Content="497" FontSize="16" HorizontalAlignment="Left" Margin="410,19,0,0" Name="label141_Copy17" VerticalAlignment="Top" />
                         </Grid>
@@ -271,18 +271,18 @@
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupGPADetail1" Header="DHC Courses" Margin="8,95,8,0" FontSize="16" Height="324" VerticalAlignment="Top">
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid Name="DHCCourseGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Label Content="Math Requirement" FontSize="16" HorizontalAlignment="Left" Margin="13,0,0,30" Name="labelMathRequirement" VerticalAlignment="Bottom" />
                             <Label Content="Language Requirement" FontSize="16" HorizontalAlignment="Left" Margin="13,0,0,76" Name="labelLanguageRequirement" VerticalAlignment="Bottom" />
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,0,702,76" Name="comboMathRequirement" VerticalAlignment="Bottom" Width="85.844">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,0,717,33" Name="comboMathRequirement" VerticalAlignment="Bottom" Width="85.844" IsEditable="True">
                                 <ComboBoxItem Content="Yes" />
                                 <ComboBoxItem Content="No" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="192,0,0,33" Name="comboLanguageRequirement" VerticalAlignment="Bottom" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="205,0,0,75" Name="comboLanguageRequirement" VerticalAlignment="Bottom" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="Yes" />
                                 <ComboBoxItem Content="No" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,12,0,0" Name="combo140_Copy1" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,12,0,0" Name="combo140" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -297,7 +297,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,58,0,0" Name="combo140_Copy" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,58,0,0" Name="combo141" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -312,7 +312,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,102,0,0" Name="combo140_Copy2" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,102,0,0" Name="combo150" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -327,7 +327,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,142,0,0" Name="combo140_Copy3" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,142,0,0" Name="combo151" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -342,7 +342,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,142,0,0" Name="combo140_Copy4" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,142,0,0" Name="combo251" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -357,7 +357,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,100,0,0" Name="combo140_Copy5" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,100,0,0" Name="combo250" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -372,7 +372,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,58,0,0" Name="combo140_Copy6" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,58,0,0" Name="combo161" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -387,7 +387,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,12,0,0" Name="combo140_Copy7" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,12,0,0" Name="combo160" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -402,7 +402,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,12,450,0" Name="combo140_Copy8" VerticalAlignment="Top">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,12,450,0" Name="combo260" VerticalAlignment="Top" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -417,7 +417,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,58,450,0" Name="combo140_Copy9" VerticalAlignment="Top">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,58,450,0" Name="combo261" VerticalAlignment="Top" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -432,7 +432,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,102,450,0" Name="combo140_Copy10" VerticalAlignment="Top">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,102,0,0" Name="combo270" VerticalAlignment="Top" HorizontalAlignment="Left" Width="113" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -447,7 +447,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,144,450,0" Name="combo140_Copy11" VerticalAlignment="Top">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,144,450,0" Name="combo301" VerticalAlignment="Top" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -462,11 +462,11 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,144,235,0" Name="combo140_Copy12" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,144,235,0" Name="combo497" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="Pass" />
                                 <ComboBoxItem Content="Fail" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,99,235,0" Name="combo140_Copy13" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,99,235,0" Name="combo401" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -481,7 +481,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,55,235,0" Name="combo140_Copy14" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,55,235,0" Name="combo399" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -496,7 +496,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,10,235,0" Name="combo140_Copy15" VerticalAlignment="Top" Width="85">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,10,235,0" Name="combo380" VerticalAlignment="Top" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />

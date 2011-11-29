@@ -50,28 +50,23 @@ namespace CodeCentPrototype
 
         private void listStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try
-            {
-                if (stPresenter != null)
-                    stPresenter.selectedStudentChanged(sender, e);            
-            }
-            catch (Exception)
-            {
-                //FIXME: Only so members can load the UI without the SQL db set up correctly. temporary.
-            }
+            if (stPresenter != null)
+                stPresenter.selectedStudentChanged(sender, e);
+
         }
 
         private void comboYear_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try
-            {
-                if (stPresenter != null)
-                    stPresenter.SelectedYearChanged(sender, e);
-            }
-            catch (Exception)
-            {
-                //FIXME: Only so members can load the UI without the SQL db set up correctly. temporary.
-            }
+            if (stPresenter != null)
+                stPresenter.SelectedYearChanged(sender, e);
+
         }
+
+        private void Ribbon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
     }
 }
