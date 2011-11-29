@@ -17,7 +17,7 @@ namespace CodeCentPrototype
         private MainWindow windowRef;
         private DBController dbConn;
         private List<Student> StudentList;
-        private Student SelectedStudent; 
+        private Student SelectedStudent;
 
 
         public StudentPresenter(MainWindow reference)
@@ -28,18 +28,18 @@ namespace CodeCentPrototype
         }
 
         public void SelectedYearChanged(object sender, SelectionChangedEventArgs e)
-        {                     
+        {
             int year;
             try
             {
                 ComboBoxItem cb = (ComboBoxItem)windowRef.comboYear.SelectedItem;
                 year = Int32.Parse(cb.Content.ToString());
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
-            
+
             if (dbConn.Open())
             {
                 DataTable studentInfo = dbConn.executeQuery("StudentInfo", null, null);

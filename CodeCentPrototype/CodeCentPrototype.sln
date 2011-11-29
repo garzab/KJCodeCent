@@ -1,17 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCentPrototype", "CodeCentPrototype\CodeCentPrototype.csproj", "{99d71b1b-ebd3-4065-8f7a-7f239be1794d}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCentPrototype", "CodeCentPrototype\CodeCentPrototype.csproj", "{449CBCE3-0975-40FF-8C68-864B59789F01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99D71B1B-EBD3-4065-8F7A-7F239BE1794D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449CBCE3-0975-40FF-8C68-864B59789F01}.Debug|x86.ActiveCfg = Debug|x86
+		{449CBCE3-0975-40FF-8C68-864B59789F01}.Debug|x86.Build.0 = Debug|x86
+		{449CBCE3-0975-40FF-8C68-864B59789F01}.Release|x86.ActiveCfg = Release|x86
+		{449CBCE3-0975-40FF-8C68-864B59789F01}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

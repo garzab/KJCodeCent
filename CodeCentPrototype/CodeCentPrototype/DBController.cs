@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data; 
-using System.Data.SqlClient; 
-using System.ComponentModel; 
+using System.Data;
+using System.Data.SqlClient;
+using System.ComponentModel;
 using System.Windows;
 
 
@@ -14,10 +14,10 @@ namespace CodeCentPrototype
 {
     public class DBController
     {
-        
+
         private static SqlConnection dbConn;
         //static SqlDataAdapter dbAdpt;
-       // static DataTable dbt_studentInfo;
+        // static DataTable dbt_studentInfo;
         //static DataTable dbt_studentStats;
         //static DataTable dbt_grades;
         //static DataSet dhcSet;
@@ -32,7 +32,7 @@ namespace CodeCentPrototype
 
             SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
             connection.DataSource = codecent.Default.DBHost;
-           // connection.Encrypt = true;
+            // connection.Encrypt = true;
             connection.InitialCatalog = codecent.Default.DBInstance;
             connection.IntegratedSecurity = true; //CHANGE THIS IN NEXT ITERATION
 
@@ -56,7 +56,7 @@ namespace CodeCentPrototype
         /// </summary>
         /// <returns>Bool indicating success or failure</returns>
         /// <exception cref="System.Data.SqlClient.SqlException"></exception>
-        public bool Open() 
+        public bool Open()
         {
             if (this.IsOpen())
                 return true;
@@ -114,20 +114,20 @@ namespace CodeCentPrototype
                 sqlString += " FROM " + table;
                 if (condition != "" && condition != null)
                     sqlString += " WHERE " + condition;
-                
+
                 SqlCommand command = new SqlCommand(sqlString, dbConn);
                 command.Prepare();
 
                 DataTable resultsTable = new DataTable();
                 SqlDataAdapter dbAdpt = new System.Data.SqlClient.SqlDataAdapter(command);
                 dbAdpt.Fill(resultsTable);
-                return resultsTable;                   
+                return resultsTable;
             }
             catch (System.Data.SqlClient.SqlException)
             {
                 throw;
             }
-          
+
         }
 
         protected bool executeInsert(string[] parameters, string[] values, string table)
@@ -139,7 +139,7 @@ namespace CodeCentPrototype
         {
             return false; //FIXME 
         }
-    
+
         public int BackupDB(string outPath)
         {
             return 0; // FIXME

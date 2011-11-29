@@ -25,6 +25,6 @@ namespace CodeCentPrototype
         {
             return 0; // FIXME
         }
-        
+
     }
 }

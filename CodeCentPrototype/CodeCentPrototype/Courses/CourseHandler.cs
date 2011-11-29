@@ -7,7 +7,8 @@ namespace CodeCentPrototype
 {
     public class CourseHandler
     {
-        public List<Course> GetCourses(){
+        public List<Course> GetCourses()
+        {
             return new List<Course>(); // FIXME
         }
 

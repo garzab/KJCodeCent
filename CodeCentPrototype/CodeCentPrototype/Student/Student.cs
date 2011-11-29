@@ -50,7 +50,7 @@ namespace CodeCentPrototype
             this.Birthday = items.ElementAt(5).ToString();
             this.StreetAddress = items.ElementAt(6).ToString();
             this.City = items.ElementAt(7).ToString();
-            this.State = items.ElementAt(8).ToString();            
+            this.State = items.ElementAt(8).ToString();
             this.Zip = (int)items.ElementAt(9);                      //Try catch
             this.HomePhone = items.ElementAt(10).ToString();
             this.CellPhone = items.ElementAt(11).ToString();
@@ -62,9 +62,9 @@ namespace CodeCentPrototype
         }
 
 
-       // public abstract int ArchiveStudent();
+        // public abstract int ArchiveStudent();
 
-       // public abstract int UpdateInformation();
+        // public abstract int UpdateInformation();
 
     }
 }
