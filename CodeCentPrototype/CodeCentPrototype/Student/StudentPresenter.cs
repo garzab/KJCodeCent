@@ -27,6 +27,7 @@ namespace CodeCentPrototype
             StudentList = new List<Student>();
         }
 
+        //Currently getting ALL students. This will need to filter by school year.
         public void SelectedYearChanged(object sender, SelectionChangedEventArgs e)
         {
             int year;
@@ -37,7 +38,9 @@ namespace CodeCentPrototype
             }
             catch (Exception)
             {
-                throw;
+                //This fails EVERY time right now. We're not actually filtering based off year yet.
+                //Also, since we had to update to school years (2011-2012 instead of just 2011), we'll need to 
+                //Split at the '-', and retrieve students who were "lastActive" during either year.
             }
 
             if (dbConn.Open())
@@ -60,6 +63,7 @@ namespace CodeCentPrototype
             }
 
         }
+
         public void selectedStudentChanged(object sender, SelectionChangedEventArgs e)
         {
 

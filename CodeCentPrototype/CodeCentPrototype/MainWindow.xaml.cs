@@ -41,7 +41,9 @@ namespace CodeCentPrototype
             for (int i = 0; i < this.comboYear.Items.Count; i++)
             {
                 ComboBoxItem x = (ComboBoxItem)this.comboYear.Items.GetItemAt(i);
-                if (x.Content.ToString() == now)
+
+                //FIXME: Only looking at the first year. Once Jan 01 2012 hits, it won't set to the current academic year.
+                if (x.Content.ToString().Substring(0,4) == now)
                     this.comboYear.SelectedIndex = i;
             }
         }
@@ -57,6 +59,11 @@ namespace CodeCentPrototype
         {
             if (stPresenter != null)
                 stPresenter.SelectedYearChanged(sender, e);
+
+        }
+
+        private void Ribbon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
 

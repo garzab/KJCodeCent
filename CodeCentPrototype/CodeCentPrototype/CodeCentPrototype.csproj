@@ -175,6 +175,27 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\unlockLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\saveSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\restoreLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pasteLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cutSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\copySmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\infoLarge.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
