@@ -51,6 +51,20 @@ namespace CodeCentPrototype
             return false;
         }
 
+
+        public DataTable GetSchema(string table)
+        {
+            if (dbConn.State == ConnectionState.Open)
+            {
+
+                SqlCommand command = new SqlCommand("Select * FROM " + table, dbConn);
+                command.Prepare();
+                SqlDataReader x = command.ExecuteReader(CommandBehavior.SchemaOnly);                
+                return x.GetSchemaTable();
+            }
+            return new DataTable();
+
+        }
         /// <summary>
         /// Attempts to open the associated dbConn
         /// </summary>

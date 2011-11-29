@@ -95,6 +95,15 @@ namespace CodeCentPrototype
             windowRef.comboCurrentCWUStudent.Text = SelectedStudent.CurrentCWU.ToString();
             windowRef.comboCoreOrHybrid.Text = SelectedStudent.CoreHybrid;
 
+
+            CourseHandler c = new CourseHandler();
+            List<Course> x = c.GetCourses();
+            string y = "";
+            foreach (Course a in x)
+                y += (a.DeptartmentCode + a.CourseNumber + "\n");
+            MessageBox.Show(y);
+
+
             //Course Grades tab (grades) - FIXME: once CourseHandler is being used we'll just loop through List<Course> and dynamically populate UI.
             windowRef.combo140.Text = SelectedStudent.dhc140;
             windowRef.combo141.Text = SelectedStudent.dhc141;
