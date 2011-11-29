@@ -12,7 +12,7 @@
             <RowDefinition Height="259*"/>
         </Grid.RowDefinitions>
 
-        <ribbon:Ribbon x:Name="Ribbon" Margin="0,0,0,65" SelectionChanged="Ribbon_SelectionChanged">
+        <ribbon:Ribbon x:Name="Ribbon" Margin="0,0,0,65">
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:RibbonApplicationMenu Label="File" IsMainMenu="True" SmallImageSource="/WpfRibbonApplication1;component/Images/fileSmall.png">
                     <ribbon:RibbonApplicationMenuItem Header="Exit"
