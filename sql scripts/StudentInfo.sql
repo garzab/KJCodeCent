@@ -1,7 +1,7 @@
 USE [DHCDB]
 GO
 
-/****** Object:  Table [dbo].[StudentInfo]    Script Date: 11/26/2011 19:31:06 ******/
+/****** Object:  Table [dbo].[StudentInfo]    Script Date: 11/29/2011 18:39:28 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -37,5 +37,4 @@ GO
 
 SET ANSI_PADDING OFF
 GO
-
 
