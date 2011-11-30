@@ -38,7 +38,7 @@ namespace CodeCentPrototype
             }
             catch (Exception)
             {
-                //This fails EVERY time right now. We're not actually filtering based off year yet.
+                //This fails EVERY time right now (2011-2012 does not parse to int). We're not actually filtering based off year yet.
                 //Also, since we had to update to school years (2011-2012 instead of just 2011), we'll need to 
                 //Split at the '-', and retrieve students who were "lastActive" during either year.
             }
@@ -48,6 +48,33 @@ namespace CodeCentPrototype
                 DataTable info = dbConn.executeQuery("StudentInfo", null, null);
                 DataTable grades = dbConn.executeQuery("grades", null, null);
                 DataTable stats = dbConn.executeQuery("StudentStats", null, null);
+
+
+                /*TESTING
+                foreach (DataRow myField in grades.Rows)
+                    foreach (DataColumn myProperty in grades.Columns)
+                    {
+                       // string title = myField[myProperty].ToString();
+                       // if (myProperty.ColumnName == "ColumnName" && title.StartsWith("c_"))
+                       // {
+                        //    string dept = Regex.Replace(title, @"\d", "").Substring(COURSE_PREFIX_LENGTH);
+
+                      //      Regex numbers = new Regex("[0-9]+");
+                      //      int number = 0;
+                     //       try
+                      //      {
+                      //          number = Int32.Parse(numbers.Match(title).Value);
+                      //      }
+                       //     catch (Exception e)
+                       //     {
+                         //       MessageBox.Show(myField[myProperty].ToString());
+                       //         throw;
+                       //     }
+
+                       //     courses.Add(new Course(dept, number));
+                       // }
+                    }
+                *///TESTING
 
                 dbConn.Close();
 
@@ -95,15 +122,14 @@ namespace CodeCentPrototype
             windowRef.comboCurrentCWUStudent.Text = SelectedStudent.CurrentCWU.ToString();
             windowRef.comboCoreOrHybrid.Text = SelectedStudent.CoreHybrid;
 
-
+/* Not implementing yet - need to have UI dynamically add labels and comboboxes (or some other control) for courses.
             CourseHandler c = new CourseHandler();
             List<Course> x = c.GetCourses();
             string y = "";
             foreach (Course a in x)
                 y += (a.DeptartmentCode + a.CourseNumber + "\n");
             MessageBox.Show(y);
-
-
+*/
             //Course Grades tab (grades) - FIXME: once CourseHandler is being used we'll just loop through List<Course> and dynamically populate UI.
             windowRef.combo140.Text = SelectedStudent.dhc140;
             windowRef.combo141.Text = SelectedStudent.dhc141;
@@ -132,7 +158,6 @@ namespace CodeCentPrototype
 
             windowRef.textPriorQuarterGPA.Text = SelectedStudent.PriorGPA.ToString();
             windowRef.textCumulativeGPA.Text = SelectedStudent.CumGPA.ToString();
-
         }
 
 

@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Text.RegularExpressions;
-
-
-
 using System.Windows.Controls;
 using System.Windows;
-using System.Data;
 
 namespace CodeCentPrototype
 {
     public class CourseHandler
     {
+        const int COURSE_PREFIX_LENGTH = 2; //In the Grades table, we prefix course columns with "c_", e.g. "c_CS480".
+
         private DBController dbConn;
 
         public List<Course> GetCourses()
@@ -30,6 +28,7 @@ namespace CodeCentPrototype
 
             dbConn.Close();
 
+            /*
             if (grades != null)
                 foreach (DataRow myField in grades.Rows)
                     foreach (DataColumn myProperty in grades.Columns)
@@ -37,7 +36,7 @@ namespace CodeCentPrototype
                         string title = myField[myProperty].ToString();
                         if (myProperty.ColumnName == "ColumnName" && title.StartsWith("c_"))
                         {
-                            string dept = Regex.Replace(title, @"\d", "").Substring(2);
+                            string dept = Regex.Replace(title, @"\d", "").Substring(COURSE_PREFIX_LENGTH);
 
                             Regex numbers = new Regex("[0-9]+");
                             int number = 0;
@@ -51,9 +50,9 @@ namespace CodeCentPrototype
                                 throw;
                             }
                                                         
-                            courses.Add(new Course(dept, number));
+                            courses.Add(new Course(dept, number, ""));
                         }
-                    }
+                    }*/
             return courses;
         }
 

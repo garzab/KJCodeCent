@@ -51,7 +51,11 @@ namespace CodeCentPrototype
             return false;
         }
 
-
+        /// <summary>
+        /// Returns the schema for the table specified in the parameter
+        /// </summary>
+        /// <returns>DataTable of schema</returns>
+        /// <exception cref="System.Data.SqlClient.SqlException"></exception>
         public DataTable GetSchema(string table)
         {
             if (dbConn.State == ConnectionState.Open)
@@ -63,8 +67,9 @@ namespace CodeCentPrototype
                 return x.GetSchemaTable();
             }
             return new DataTable();
-
         }
+
+
         /// <summary>
         /// Attempts to open the associated dbConn
         /// </summary>
