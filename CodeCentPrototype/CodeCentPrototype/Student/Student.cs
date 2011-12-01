@@ -111,70 +111,75 @@ namespace CodeCentPrototype
             object[] studentInfo = info.ItemArray;
             
             //Info
-            this.StudentID = (int)studentInfo.ElementAt(0);                //Try catch
-            this.FirstName = studentInfo.ElementAt(2).ToString();
-            this.MiddleInitial = studentInfo.ElementAt(3).ToString();
-            this.LastName = studentInfo.ElementAt(4).ToString();
-            this.Birthday = studentInfo.ElementAt(5).ToString();
-            this.StreetAddress = studentInfo.ElementAt(6).ToString();
-            this.City = studentInfo.ElementAt(7).ToString();
-            this.State = studentInfo.ElementAt(8).ToString();
-            this.Zip = (int)studentInfo.ElementAt(9);                      //Try catch
-            this.HomePhone = studentInfo.ElementAt(10).ToString();
-            this.CellPhone = studentInfo.ElementAt(11).ToString();
-            this.StandardEmail = studentInfo.ElementAt(12).ToString();
-            this.CWUEmail = studentInfo.ElementAt(13).ToString();
-            this.Notes = studentInfo.ElementAt(14).ToString();
-            
-            this.DisplayString = LastName + ", " + FirstName;
+            try
+            {
+                this.StudentID = (int)studentInfo.ElementAt(0);                //Try catch
+                this.FirstName = studentInfo.ElementAt(2).ToString();
+                this.MiddleInitial = studentInfo.ElementAt(3).ToString();
+                this.LastName = studentInfo.ElementAt(4).ToString();
+                this.Birthday = studentInfo.ElementAt(5).ToString();
+                this.StreetAddress = studentInfo.ElementAt(6).ToString();
+                this.City = studentInfo.ElementAt(7).ToString();
+                this.State = studentInfo.ElementAt(8).ToString();
+                this.Zip = (int)studentInfo.ElementAt(9);                      //Try catch
+                this.HomePhone = studentInfo.ElementAt(10).ToString();
+                this.CellPhone = studentInfo.ElementAt(11).ToString();
+                this.StandardEmail = studentInfo.ElementAt(12).ToString();
+                this.CWUEmail = studentInfo.ElementAt(13).ToString();
+                this.Notes = studentInfo.ElementAt(14).ToString();
+
+                this.DisplayString = LastName + ", " + FirstName;
 
 
-            //Stats
-            object[] studentStats = stats.ItemArray;
-            this.FirstYear = studentStats.ElementAt(1).ToString();
-            this.AppStatus = studentStats.ElementAt(2).ToString();
-            this.CurrentCWU = Boolean.Parse(studentStats.ElementAt(3).ToString());
-            this.DateReceived = studentStats.ElementAt(4).ToString();
-            this.Transfer = Boolean.Parse(studentStats.ElementAt(5).ToString());
-            this.QuarterEnteredCWU = studentStats.ElementAt(6).ToString();
-            this.QuarterEnteredDHC = studentStats.ElementAt(7).ToString();
-            this.Status = studentStats.ElementAt(8).ToString();
-            this.StatusDate = studentStats.ElementAt(8).ToString();
-            this.DirectorAction = studentStats.ElementAt(9).ToString();
-            this.DirectorActionDate = studentStats.ElementAt(10).ToString();
-            this.CoreHybrid = studentStats.ElementAt(11).ToString();
-            this.Standing = studentStats.ElementAt(12).ToString();
+                //Stats
+                object[] studentStats = stats.ItemArray;
+                this.FirstYear = studentStats.ElementAt(1).ToString();
+                this.AppStatus = studentStats.ElementAt(2).ToString();
+                this.CurrentCWU = Boolean.Parse(studentStats.ElementAt(3).ToString());
+                this.DateReceived = studentStats.ElementAt(4).ToString();
+                this.Transfer = Boolean.Parse(studentStats.ElementAt(5).ToString());
+                this.QuarterEnteredCWU = studentStats.ElementAt(6).ToString();
+                this.QuarterEnteredDHC = studentStats.ElementAt(7).ToString();
+                this.Status = studentStats.ElementAt(8).ToString();
+                this.StatusDate = studentStats.ElementAt(8).ToString();
+                this.DirectorAction = studentStats.ElementAt(9).ToString();
+                this.DirectorActionDate = studentStats.ElementAt(10).ToString();
+                this.CoreHybrid = studentStats.ElementAt(11).ToString();
+                this.Standing = studentStats.ElementAt(12).ToString();
 
-            //Grades
-            object[] studentGrades = grades.ItemArray;
-            this.dhc140 = studentGrades.ElementAt(1).ToString();
-            this.dhc141 = studentGrades.ElementAt(2).ToString();
-            this.dhc150 = studentGrades.ElementAt(3).ToString();
-            this.dhc151 = studentGrades.ElementAt(4).ToString();
-            this.dhc160 = studentGrades.ElementAt(5).ToString();
-            this.dhc161 = studentGrades.ElementAt(6).ToString();
-            this.dhc250 = studentGrades.ElementAt(7).ToString();
-            this.dhc251 = studentGrades.ElementAt(8).ToString();
-            this.dhc260 = studentGrades.ElementAt(9).ToString();
-            this.dhc261 = studentGrades.ElementAt(10).ToString();
-            this.dhc270 = studentGrades.ElementAt(11).ToString();
-            this.dhc301 = studentGrades.ElementAt(12).ToString();
-            this.dhc380 = studentGrades.ElementAt(13).ToString();
-            this.dhc399 = studentGrades.ElementAt(14).ToString();
-            this.dhc401 = studentGrades.ElementAt(15).ToString();
-            this.dhc497 = studentGrades.ElementAt(16).ToString();
-            this.shp399 = studentGrades.ElementAt(17).ToString();
-            this.shp401 = studentGrades.ElementAt(18).ToString();
-            this.shp497 = studentGrades.ElementAt(19).ToString();
+                //Grades
+                object[] studentGrades = grades.ItemArray;
+                this.dhc140 = studentGrades.ElementAt(1).ToString();
+                this.dhc141 = studentGrades.ElementAt(2).ToString();
+                this.dhc150 = studentGrades.ElementAt(3).ToString();
+                this.dhc151 = studentGrades.ElementAt(4).ToString();
+                this.dhc160 = studentGrades.ElementAt(5).ToString();
+                this.dhc161 = studentGrades.ElementAt(6).ToString();
+                this.dhc250 = studentGrades.ElementAt(7).ToString();
+                this.dhc251 = studentGrades.ElementAt(8).ToString();
+                this.dhc260 = studentGrades.ElementAt(9).ToString();
+                this.dhc261 = studentGrades.ElementAt(10).ToString();
+                this.dhc270 = studentGrades.ElementAt(11).ToString();
+                this.dhc301 = studentGrades.ElementAt(12).ToString();
+                this.dhc380 = studentGrades.ElementAt(13).ToString();
+                this.dhc399 = studentGrades.ElementAt(14).ToString();
+                this.dhc401 = studentGrades.ElementAt(15).ToString();
+                this.dhc497 = studentGrades.ElementAt(16).ToString();
+                this.shp399 = studentGrades.ElementAt(17).ToString();
+                this.shp401 = studentGrades.ElementAt(18).ToString();
+                this.shp497 = studentGrades.ElementAt(19).ToString();
 
-            if (studentGrades.ElementAt(20).ToString() != "") this.Sat = Decimal.Parse(studentGrades.ElementAt(20).ToString());
-            if (studentGrades.ElementAt(21).ToString() != "") this.Act = Decimal.Parse(studentGrades.ElementAt(21).ToString());
-            if (studentGrades.ElementAt(22).ToString() != "") this.Ai = Decimal.Parse(studentGrades.ElementAt(22).ToString());
+                if (studentGrades.ElementAt(20).ToString() != "") this.Sat = Decimal.Parse(studentGrades.ElementAt(20).ToString());
+                if (studentGrades.ElementAt(21).ToString() != "") this.Act = Decimal.Parse(studentGrades.ElementAt(21).ToString());
+                if (studentGrades.ElementAt(22).ToString() != "") this.Ai = Decimal.Parse(studentGrades.ElementAt(22).ToString());
 
-            if (studentGrades.ElementAt(23).ToString() != "") this.CollegeGPA = Decimal.Parse(studentGrades.ElementAt(23).ToString());
-            if (studentGrades.ElementAt(24).ToString() != "") this.PriorGPA = Decimal.Parse(studentGrades.ElementAt(24).ToString());
-            if (studentGrades.ElementAt(25).ToString() != "") this.CumGPA = Decimal.Parse(studentGrades.ElementAt(25).ToString());
-            
+                if (studentGrades.ElementAt(23).ToString() != "") this.CollegeGPA = Decimal.Parse(studentGrades.ElementAt(23).ToString());
+                if (studentGrades.ElementAt(24).ToString() != "") this.PriorGPA = Decimal.Parse(studentGrades.ElementAt(24).ToString());
+                if (studentGrades.ElementAt(25).ToString() != "") this.CumGPA = Decimal.Parse(studentGrades.ElementAt(25).ToString());
+            }
+            catch (Exception)
+            {
+            }
 
 
         }

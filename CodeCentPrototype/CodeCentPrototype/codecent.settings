@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DBHost" Type="System.String" Scope="User">
-      <Value Profile="(Default)">localhost\SQLEXPRESS</Value>
+      <Value Profile="(Default)">OWNER-LAPTOP\SQLEXPRESS</Value>
     </Setting>
     <Setting Name="DBInstance" Type="System.String" Scope="User">
       <Value Profile="(Default)">DHCDB</Value>
