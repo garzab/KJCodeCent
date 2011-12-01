@@ -90,6 +90,7 @@ namespace CodeCentPrototype
                 }
                 catch (Exception) { }
 
+                StudentList.Sort(delegate(Student s1, Student s2) { return s1.LastName.CompareTo(s2.LastName); });
                 windowRef.listStudents.ItemsSource = StudentList;
                 windowRef.listStudents.DisplayMemberPath = "DisplayString";
             }
@@ -110,6 +111,7 @@ namespace CodeCentPrototype
                 windowRef.textStudentID.Text = SelectedStudent.StudentID.ToString();
                 windowRef.textAddress.Text = SelectedStudent.StreetAddress;
                 windowRef.textCity.Text = SelectedStudent.City;
+                windowRef.textState.Text = SelectedStudent.State;
                 windowRef.textZIPCode.Text = SelectedStudent.Zip.ToString();
                 windowRef.textCWUEmailAddress.Text = SelectedStudent.CWUEmail;
                 windowRef.textEmailAddress.Text = SelectedStudent.StandardEmail;
@@ -120,12 +122,17 @@ namespace CodeCentPrototype
                 windowRef.comboClassStanding.Text = SelectedStudent.Standing.ToString();
                 windowRef.comboCWUAppStatus.Text = SelectedStudent.AppStatus.ToString();
                 windowRef.comboTransfer.Text = SelectedStudent.Transfer.ToString();
-                windowRef.textDateReceived.Text = SelectedStudent.DateReceived;
+                windowRef.textDateReceived.Text = SelectedStudent.DateReceived.Substring(0, SelectedStudent.DateReceived.IndexOf(" ")) ;
                 windowRef.textDateOfDirectorAction.Text = SelectedStudent.DirectorActionDate;
                 windowRef.textQuarterEnteredCWU.Text = SelectedStudent.QuarterEnteredCWU;
                 windowRef.textQuarterEnteredDHC.Text = SelectedStudent.QuarterEnteredDHC;
                 windowRef.comboCurrentCWUStudent.Text = SelectedStudent.CurrentCWU.ToString();
-                windowRef.comboCoreOrHybrid.Text = SelectedStudent.CoreHybrid;
+
+                //Junk
+                windowRef.comboCoreOrHybrid.Text = "CWU Breadth";
+                windowRef.comboMathRequirement.Text = "Yes";
+                windowRef.comboLanguageRequirement.Text = "Yes";
+                windowRef.comboGraduatedOrWithdrawn.Text = SelectedStudent.Status;
 
                 /* Not implementing yet - need to have UI dynamically add labels and comboboxes (or some other control) for courses.
                             CourseHandler c = new CourseHandler();

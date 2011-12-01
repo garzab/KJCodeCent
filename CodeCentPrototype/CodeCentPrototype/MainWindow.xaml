@@ -136,7 +136,7 @@
             <TabItem x:Name="tabDetails" Header="Details" Background="{x:Null}" FontSize="16">
                 <Grid Background="White">
                     <GroupBox x:Name="groupGeneral" Header="General" Margin="8,8,8,0" Height="294.18" VerticalAlignment="Top"/>
-                    <GroupBox x:Name="groupTestScores" Header="Test Scores | GPA" Margin="8,306.18,8,32">
+                    <GroupBox x:Name="groupTestScores" Header="Test Scores and Transfer GPA" Margin="8,306.18,8,32">
                         <Grid>
                             <Label Content="College GPA" FontSize="16" HorizontalAlignment="Left" Margin="519,5,0,0" Name="labelCollegeGPA" VerticalAlignment="Top" />
                             <Label Content="HS GPA" FontSize="16" HorizontalAlignment="Left" Margin="542,0,0,128" Name="labelHSGPA" VerticalAlignment="Bottom" />
@@ -277,13 +277,13 @@
                     </GroupBox>
                     <GroupBox x:Name="groupGPADetail1" Header="DHC Courses" Margin="8,95,8,0" FontSize="16" Height="324" VerticalAlignment="Top">
                         <Grid Name="DHCCourseGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <Label Content="Math Requirement" FontSize="16" HorizontalAlignment="Left" Margin="13,0,0,30" Name="labelMathRequirement" VerticalAlignment="Bottom" />
-                            <Label Content="Language Requirement" FontSize="16" HorizontalAlignment="Left" Margin="13,0,0,76" Name="labelLanguageRequirement" VerticalAlignment="Bottom" />
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,0,717,33" Name="comboMathRequirement" VerticalAlignment="Bottom" Width="85.844" IsEditable="True">
+                            <Label Content="Math Requirement Complete" FontSize="16" HorizontalAlignment="Left" Margin="42,0,0,28" Name="labelMathRequirement" VerticalAlignment="Bottom" />
+                            <Label Content="Language Requirement Complete" FontSize="16" HorizontalAlignment="Left" Margin="13,0,0,76" Name="labelLanguageRequirement" VerticalAlignment="Bottom" />
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,0,562,29" Name="comboMathRequirement" VerticalAlignment="Bottom" Width="85.844" IsEditable="True">
                                 <ComboBoxItem Content="Yes" />
                                 <ComboBoxItem Content="No" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="205,0,0,75" Name="comboLanguageRequirement" VerticalAlignment="Bottom" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="265,0,0,75" Name="comboLanguageRequirement" VerticalAlignment="Bottom" Width="85" IsEditable="True">
                                 <ComboBoxItem Content="Yes" />
                                 <ComboBoxItem Content="No" />
                             </ComboBox>
@@ -548,6 +548,9 @@
                     <GroupBox x:Name="groupAttachedFiles" Header="Attached Files" Margin="8,310.46,8,369.22" Grid.ColumnSpan="2">
                         <ListBox x:Name="listFiles"/>
                     </GroupBox>
+                    <GroupBox Header="Attached Files" Height="255" Margin="8,312,8,0" Name="groupBox1" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                        <TextBox Name="textBox1" TextWrapping="Wrap" />
+                    </GroupBox>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -576,6 +579,6 @@
             <ComboBoxItem Content="Breadth"/>
             <ComboBoxItem Content="DHC"/>
             <ComboBoxItem Content="CWU"/>
-        </ComboBox>      
+        </ComboBox>
     </Grid>
 </ribbon:RibbonWindow>

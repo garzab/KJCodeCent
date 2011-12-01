@@ -145,7 +145,8 @@ namespace CodeCentPrototype
                 this.DirectorAction = studentStats.ElementAt(9).ToString();
                 this.DirectorActionDate = studentStats.ElementAt(10).ToString();
                 this.CoreHybrid = studentStats.ElementAt(11).ToString();
-                this.Standing = studentStats.ElementAt(12).ToString();
+                //CORE HYBRID????
+                this.Standing = studentStats.ElementAt(13).ToString();
 
                 //Grades
                 object[] studentGrades = grades.ItemArray;
