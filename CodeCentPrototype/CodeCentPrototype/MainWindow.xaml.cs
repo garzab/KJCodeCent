@@ -25,8 +25,6 @@ namespace CodeCentPrototype
         public MainWindow()
         {
             InitializeComponent();
-
-            // Insert code required on object creation below this point.
         }
 
         private void RibbonWindow_Loaded(object sender, RoutedEventArgs e)
@@ -51,7 +49,7 @@ namespace CodeCentPrototype
         private void listStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (stPresenter != null)
-                stPresenter.selectedStudentChanged(sender, e);
+               stPresenter.selectedStudentChanged(sender, e);
 
         }
 
@@ -59,19 +57,19 @@ namespace CodeCentPrototype
         {
             if (stPresenter != null)
                 stPresenter.SelectedYearChanged(sender, e);
-
         }
 
-        private void Ribbon_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void ProfileTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (stPresenter != null)
                 stPresenter.ProfileTabChanged(sender, e);
 
+        }
+
+        private void ButtonExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
 

@@ -33,9 +33,15 @@ namespace CodeCentPrototype
             StudentList = new List<Student>();
         }
 
-        //Currently getting ALL students. This will need to filter by school year.
+
+        /// <summary>
+        /// Event listener for year selection changes from the UI.
+        /// </summary>
+        /// <param name="sender">Re-pass sender from original event handler.</param>
+        /// <param name="e">Re-pass e from original event handler.</param>
         public void SelectedYearChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Currently getting ALL students. This will need to filter by school year.
             int year;
             try
             {
@@ -55,38 +61,11 @@ namespace CodeCentPrototype
                 DataTable grades = dbConn.executeQuery("grades", null, null);
                 DataTable stats = dbConn.executeQuery("StudentStats", null, null);
 
-
-                /*TESTING
-                foreach (DataRow myField in grades.Rows)
-                    foreach (DataColumn myProperty in grades.Columns)
-                    {
-                       // string title = myField[myProperty].ToString();
-                       // if (myProperty.ColumnName == "ColumnName" && title.StartsWith("c_"))
-                       // {
-                        //    string dept = Regex.Replace(title, @"\d", "").Substring(COURSE_PREFIX_LENGTH);
-
-                      //      Regex numbers = new Regex("[0-9]+");
-                      //      int number = 0;
-                     //       try
-                      //      {
-                      //          number = Int32.Parse(numbers.Match(title).Value);
-                      //      }
-                       //     catch (Exception e)
-                       //     {
-                         //       MessageBox.Show(myField[myProperty].ToString());
-                       //         throw;
-                       //     }
-
-                       //     courses.Add(new Course(dept, number));
-                       // }
-                    }
-                *///TESTING
-
                 dbConn.Close();
 
                 /*
-                 * Relying on all tables to return the same number of rows - FIXME?
-                 */
+                    * Relying on all tables to return the same number of rows - FIXME!
+                    */
                 try
                 {
                     for (int i = 0; i < info.Rows.Count; i++)
@@ -100,9 +79,15 @@ namespace CodeCentPrototype
                 windowRef.listStudents.ItemsSource = StudentList;
                 windowRef.listStudents.DisplayMemberPath = "DisplayString";
             }
+            
 
         }
 
+        /// <summary>
+        /// Event responder for student selection events from the UI. Re-populates selected tab.
+        /// </summary>
+        /// <param name="sender">Re-pass sender from original event handler.</param>
+        /// <param name="e">Re-pass e from original event handler.</param>
         public void selectedStudentChanged(object sender, SelectionChangedEventArgs e)
         {
             //Populate selected tab
@@ -110,11 +95,20 @@ namespace CodeCentPrototype
             this.ProfileTabChanged(sender, e);
         }
 
+
+        /// <summary>
+        /// Event responder for tab change events from the UI. Loads associated tab data.
+        /// </summary>
+        /// <param name="sender">Re-pass sender from original event handler.</param>
+        /// <param name="e">Re-pass e from original event handler.</param>
         public void ProfileTabChanged(object sender, SelectionChangedEventArgs e)
         {
             int selectedIndex = windowRef.ProfileTabControl.SelectedIndex;
 
-            if (windowRef.ProfileTabControl.SelectedIndex == PROFILE_TAB_INDEX)
+            if (SelectedStudent == null)
+                return;
+
+            else if (windowRef.ProfileTabControl.SelectedIndex == PROFILE_TAB_INDEX)
                 PopulateProfileTab();
 
             else if (windowRef.ProfileTabControl.SelectedIndex == DETAILS_TAB_INDEX)
@@ -127,7 +121,9 @@ namespace CodeCentPrototype
                 PopulateAttachmentsTab();
         }
 
-
+        /// <summary>
+        /// Updates controls in the Profile tab according to selected student
+        /// </summary>
         public void PopulateProfileTab()
         {
             windowRef.textFirstName.Text = SelectedStudent.FirstName ?? "";
@@ -145,6 +141,9 @@ namespace CodeCentPrototype
             windowRef.textBirthday.Text = SelectedStudent.Birthday ?? "";
         }
 
+        /// <summary>
+        /// Updates controls in the Details tab according to selected student
+        /// </summary>
         public void PopulateDetailsTab()
         {
             windowRef.comboClassStanding.Text = SelectedStudent.Standing ?? "";
@@ -157,9 +156,13 @@ namespace CodeCentPrototype
             try { windowRef.comboCurrentCWUStudent.Text = SelectedStudent.CurrentCWU.ToString(); } catch { }
         }
 
+        /// <summary>
+        /// Updates controls in the Grades tab according to selected student
+        /// </summary>
         public void PopulateCourseGradesTab()
         {
             /* Not implementing yet - need to have UI dynamically add labels and comboboxes (or some other control) for courses.
+             * FIXME: also need to update CourseHandler code to parse credits from column title - e.g. c_5_dhc123, only doing c_dhc123 now.
                         CourseHandler c = new CourseHandler();
                         List<Course> x = c.GetCourses();
                         string y = "";
@@ -198,6 +201,9 @@ namespace CodeCentPrototype
             try { windowRef.textCumulativeGPA.Text = SelectedStudent.CumGPA.ToString(); } catch { }
         }
 
+        /// <summary>
+        /// Updates controls in the Attachments tab according to selected student
+        /// </summary>
         public void PopulateAttachmentsTab()
         {
             windowRef.textComments.Text = SelectedStudent.Notes ?? "";

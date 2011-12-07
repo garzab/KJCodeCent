@@ -98,8 +98,6 @@ C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\App.
 C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\CodeCentPrototype_MarkupCompile.cache
 C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\CodeCentPrototype.g.resources
 C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\CodeCentPrototype.Properties.Resources.resources
-C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\ResGen.read.1.tlog
-C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\ResGen.write.1.tlog
 C:\Users\owner\Desktop\KJCodeCent\CodeCentPrototype\CodeCentPrototype\bin\Debug\CodeCentPrototype.exe.config
 C:\Users\owner\Desktop\KJCodeCent\CodeCentPrototype\CodeCentPrototype\bin\Debug\CodeCentPrototype.exe
 C:\Users\owner\Desktop\KJCodeCent\CodeCentPrototype\CodeCentPrototype\bin\Debug\CodeCentPrototype.pdb
