@@ -67,6 +67,13 @@ namespace CodeCentPrototype
 
         }
 
+        private void ProfileTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (stPresenter != null)
+                stPresenter.ProfileTabChanged(sender, e);
+
+        }
+
 
     }
 }

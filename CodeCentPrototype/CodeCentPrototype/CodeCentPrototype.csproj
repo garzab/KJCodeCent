@@ -111,6 +111,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="codecent.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>codecent.Designer.cs</LastGenOutput>
