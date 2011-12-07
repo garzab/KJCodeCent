@@ -16,11 +16,6 @@ namespace CodeCentPrototype
     {
 
         private static SqlConnection dbConn;
-        //static SqlDataAdapter dbAdpt;
-        // static DataTable dbt_studentInfo;
-        //static DataTable dbt_studentStats;
-        //static DataTable dbt_grades;
-        //static DataSet dhcSet;
 
         /// <summary>
         /// Constructor for DBConn class
@@ -85,8 +80,9 @@ namespace CodeCentPrototype
                 dbConn.Open();
                 return true;
             }
-            catch (System.Data.SqlClient.SqlException)
+            catch (System.Data.SqlClient.SqlException e)
             {
+                MessageBox.Show("DBController open failure: " + e.Message); 
                 throw;
             }
         }
@@ -106,8 +102,9 @@ namespace CodeCentPrototype
                 dbConn.Close();
                 return true;
             }
-            catch (System.Data.SqlClient.SqlException)
+            catch (System.Data.SqlClient.SqlException e)
             {
+                MessageBox.Show("DBController close failure: " + e.Message); 
                 throw;
             }
         }
@@ -142,8 +139,9 @@ namespace CodeCentPrototype
                 dbAdpt.Fill(resultsTable);
                 return resultsTable;
             }
-            catch (System.Data.SqlClient.SqlException)
+            catch (System.Data.SqlClient.SqlException e)
             {
+                MessageBox.Show("DBController executeQuery failure: " + e.Message); 
                 throw;
             }
 

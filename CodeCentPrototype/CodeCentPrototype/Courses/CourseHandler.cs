@@ -11,7 +11,7 @@ namespace CodeCentPrototype
 {
     public class CourseHandler
     {
-        const int COURSE_PREFIX_LENGTH = 2; //In the Grades table, we prefix course columns with "c_", e.g. "c_CS480".
+        const string COURSE_PREFIX = "c_"; //In the Grades table, we prefix course columns with "c_", e.g. "c_CS480".
 
         private DBController dbConn;
 
@@ -24,9 +24,9 @@ namespace CodeCentPrototype
             if (dbConn.Open())
             {
                 grades = dbConn.GetSchema("Grades");
+                dbConn.Close();
             }
 
-            dbConn.Close();
 
             /*
             if (grades != null)
@@ -34,9 +34,9 @@ namespace CodeCentPrototype
                     foreach (DataColumn myProperty in grades.Columns)
                     {
                         string title = myField[myProperty].ToString();
-                        if (myProperty.ColumnName == "ColumnName" && title.StartsWith("c_"))
+                        if (myProperty.ColumnName == "ColumnName" && title.StartsWith(COURSE_PREFIX))
                         {
-                            string dept = Regex.Replace(title, @"\d", "").Substring(COURSE_PREFIX_LENGTH);
+                            string dept = Regex.Replace(title, @"\d", "").Substring(COURSE_PREFIX.Length);
 
                             Regex numbers = new Regex("[0-9]+");
                             int number = 0;
