@@ -118,5 +118,5 @@ C:\Users\owner\Desktop\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\De
 C:\Users\owner\Desktop\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Users\owner\Desktop\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\CodeCentPrototype.exe
 C:\Users\owner\Desktop\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\CodeCentPrototype.pdb
-C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
-C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Owner\KJCodeCent\CodeCentPrototype\CodeCentPrototype\obj\x86\Debug\ResGen.write.1.tlog

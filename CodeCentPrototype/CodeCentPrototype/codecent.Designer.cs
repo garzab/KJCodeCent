@@ -25,7 +25,7 @@ namespace CodeCentPrototype {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("local3host\\SQLEXPRESS")]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost\\SQLEXPRESS")]
         public string DBHost {
             get {
                 return ((string)(this["DBHost"]));
