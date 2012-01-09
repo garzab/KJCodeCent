@@ -82,9 +82,11 @@ namespace CodeCentPrototype
             }
             catch (System.Data.SqlClient.SqlException e)
             {
-                MessageBox.Show("DBController open failure: " + e.Message); 
-                throw;
+                MessageBox.Show("DBController open failure: " + e.Message);
+                return false;
+                //throw;
             }
+
         }
 
         /// <summary>
