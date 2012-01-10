@@ -22,10 +22,12 @@ namespace CodeCentPrototype
 
         private MainWindow windowRef;
         private DBController dbConn;
+
         private List<Student> StudentList;
         private Student SelectedStudent;
-        private bool PromptForSaveChanges;
 
+        private bool PromptForSaveChanges;
+        private List<int> PopulatedTabs; //Used to store tab indices for populated tabs (max size, 4). So we don't overwrite changes when the user switches tabs. reinitialized when new student is selected.
 
         public StudentPresenter(MainWindow reference)
         {
@@ -33,6 +35,7 @@ namespace CodeCentPrototype
             dbConn = new DBController();
             StudentList = new List<Student>();
             PromptForSaveChanges = false;
+            PopulatedTabs = new List<int>();
         }
 
 
@@ -98,25 +101,39 @@ namespace CodeCentPrototype
                 if (result == MessageBoxResult.Yes)
                 {
                     //FIXME: Need SQL code/dbConn method to update tables here
-                    PromptForSaveChanges = false;
-                }
-                else if (result == MessageBoxResult.No)
-                {
-                    PromptForSaveChanges = false;
-                    //Populate selected tab
-                    this.SelectedStudent = windowRef.listStudents.SelectedItem as Student;
-                    this.ProfileTabChanged(sender, e);
                 }
                 else if (result == MessageBoxResult.Cancel)
                     return;
             }
-            else
-            {
-                //Populate selected tab
-                this.SelectedStudent = windowRef.listStudents.SelectedItem as Student;
-                this.ProfileTabChanged(sender, e);
-            }
+
+            //Populate selected tab
+            PopulatedTabs = new List<int>();
+            this.SelectedStudent = windowRef.listStudents.SelectedItem as Student;
+            UpdateTabForNewStudent();
+
+            PromptForSaveChanges = false;
                  
+        }
+
+
+        public void UpdateTabForNewStudent()
+        {
+            int selectedIndex = windowRef.ProfileTabControl.SelectedIndex;
+
+            if (SelectedStudent == null)
+                return;
+
+            if (windowRef.ProfileTabControl.SelectedIndex == PROFILE_TAB_INDEX)
+                PopulateProfileTab();
+
+            else if (windowRef.ProfileTabControl.SelectedIndex == DETAILS_TAB_INDEX)
+                PopulateDetailsTab();
+
+            else if (windowRef.ProfileTabControl.SelectedIndex == GRADES_TAB_INDEX)
+                PopulateCourseGradesTab();
+
+            else if (windowRef.ProfileTabControl.SelectedIndex == ATTACHMENTS_TAB_INDEX)
+                PopulateAttachmentsTab();
         }
 
 
@@ -132,19 +149,6 @@ namespace CodeCentPrototype
             if (SelectedStudent == null)
                 return;
 
-            bool saveChanges = PromptForSaveChanges; //Remember state before we change things
-
-            if (PromptForSaveChanges)
-            {
-                MessageBoxResult result = MessageBox.Show("Save changes to student?", "Save Changes", MessageBoxButton.YesNoCancel);
-                if (result == MessageBoxResult.Yes)
-                {
-                    //FIXME: Need SQL code/dbConn method to update tables here
-                }
-                else if (result == MessageBoxResult.Cancel)
-                    return;
-            }
-
             if (windowRef.ProfileTabControl.SelectedIndex == PROFILE_TAB_INDEX)
                 PopulateProfileTab();
 
@@ -156,8 +160,6 @@ namespace CodeCentPrototype
 
             else if (windowRef.ProfileTabControl.SelectedIndex == ATTACHMENTS_TAB_INDEX)
                 PopulateAttachmentsTab();
-
-            PromptForSaveChanges = saveChanges; //restore state
         }
 
         /// <summary>
@@ -165,6 +167,9 @@ namespace CodeCentPrototype
         /// </summary>
         public void PopulateProfileTab()
         {
+            if(PopulatedTabs.Contains(PROFILE_TAB_INDEX))
+                return;
+
             windowRef.textFirstName.Text = SelectedStudent.FirstName ?? "";
             windowRef.textLastName.Text = SelectedStudent.LastName ?? "";
             windowRef.textCellPhone.Text = SelectedStudent.CellPhone ?? "";
@@ -178,6 +183,9 @@ namespace CodeCentPrototype
             windowRef.textCWUEmailAddress.Text = SelectedStudent.CWUEmail ?? "";
             windowRef.textEmailAddress.Text = SelectedStudent.StandardEmail ?? "";
             windowRef.textBirthday.Text = SelectedStudent.Birthday ?? "";
+
+            if (!PopulatedTabs.Contains(PROFILE_TAB_INDEX))
+                PopulatedTabs.Add(PROFILE_TAB_INDEX);
         }
 
         /// <summary>
@@ -185,6 +193,9 @@ namespace CodeCentPrototype
         /// </summary>
         public void PopulateDetailsTab()
         {
+            if (PopulatedTabs.Contains(DETAILS_TAB_INDEX))
+                return;
+
             windowRef.comboClassStanding.Text = SelectedStudent.Standing ?? "";
             try { windowRef.comboCWUAppStatus.Text = SelectedStudent.AppStatus.ToString(); } catch { }
             try { windowRef.comboTransfer.Text = SelectedStudent.Transfer.ToString(); } catch { }
@@ -193,6 +204,9 @@ namespace CodeCentPrototype
             windowRef.textQuarterEnteredCWU.Text = SelectedStudent.QuarterEnteredCWU ?? "";
             windowRef.textQuarterEnteredDHC.Text = SelectedStudent.QuarterEnteredDHC ?? "";
             try { windowRef.comboCurrentCWUStudent.Text = SelectedStudent.CurrentCWU.ToString(); } catch { }
+            
+            if (!PopulatedTabs.Contains(DETAILS_TAB_INDEX))
+                PopulatedTabs.Add(DETAILS_TAB_INDEX);
         }
 
         /// <summary>
@@ -200,6 +214,9 @@ namespace CodeCentPrototype
         /// </summary>
         public void PopulateCourseGradesTab()
         {
+            if (PopulatedTabs.Contains(GRADES_TAB_INDEX))
+                return;
+
             /* Not implementing yet - need to have UI dynamically add labels and comboboxes (or some other control) for courses.
              * FIXME: also need to update CourseHandler code to parse credits from column title - e.g. c_5_dhc123, only doing c_dhc123 now.
                         CourseHandler c = new CourseHandler();
@@ -238,6 +255,9 @@ namespace CodeCentPrototype
 
             try { windowRef.textPriorQuarterGPA.Text = SelectedStudent.PriorGPA.ToString(); } catch { }
             try { windowRef.textCumulativeGPA.Text = SelectedStudent.CumGPA.ToString(); } catch { }
+            
+            if (!PopulatedTabs.Contains(GRADES_TAB_INDEX))
+                PopulatedTabs.Add(GRADES_TAB_INDEX);
         }
 
         /// <summary>
@@ -245,8 +265,14 @@ namespace CodeCentPrototype
         /// </summary>
         public void PopulateAttachmentsTab()
         {
+            if (PopulatedTabs.Contains(ATTACHMENTS_TAB_INDEX))
+                return;
+
             windowRef.textComments.Text = SelectedStudent.Notes ?? "";
             //Load attachment list here once we have that functionality
+
+            if (!PopulatedTabs.Contains(ATTACHMENTS_TAB_INDEX))
+                PopulatedTabs.Add(ATTACHMENTS_TAB_INDEX);
         }
 
 

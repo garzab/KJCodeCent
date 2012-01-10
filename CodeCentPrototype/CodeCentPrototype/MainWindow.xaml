@@ -291,7 +291,7 @@
                                 <ComboBoxItem Content="Yes" />
                                 <ComboBoxItem Content="No" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,12,0,0" Name="combo140" VerticalAlignment="Top" Width="85" IsEditable="True" DataContext="{Binding}" ItemsSource="{Binding}" SelectionChanged="StudentField_Changed">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,12,0,0" Name="combo140" VerticalAlignment="Top" Width="85" IsEditable="True" DataContext="{Binding}" ItemsSource="{Binding}">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
