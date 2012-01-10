@@ -7,9 +7,6 @@ using System.Data.SqlClient;
 using System.ComponentModel;
 using System.Windows;
 
-
-
-
 namespace CodeCentPrototype
 {
     public class DBController
