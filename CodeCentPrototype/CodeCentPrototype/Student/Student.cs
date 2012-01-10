@@ -185,6 +185,7 @@ namespace CodeCentPrototype
 
         }
 
+        public Student() {  }
 
         // public abstract int ArchiveStudent();
 

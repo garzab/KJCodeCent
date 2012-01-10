@@ -72,6 +72,18 @@ namespace CodeCentPrototype
             this.Close();
         }
 
+        private void StudentField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (stPresenter != null)
+                stPresenter.FieldTextChanged();
+        }
+
+        private void StudentField_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (stPresenter != null)
+                stPresenter.FieldTextChanged();
+        }
+
 
     }
 }

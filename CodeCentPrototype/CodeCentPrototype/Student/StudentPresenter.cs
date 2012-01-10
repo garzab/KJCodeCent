@@ -24,6 +24,7 @@ namespace CodeCentPrototype
         private DBController dbConn;
         private List<Student> StudentList;
         private Student SelectedStudent;
+        private bool PromptForSaveChanges;
 
 
         public StudentPresenter(MainWindow reference)
@@ -31,6 +32,7 @@ namespace CodeCentPrototype
             windowRef = reference;
             dbConn = new DBController();
             StudentList = new List<Student>();
+            PromptForSaveChanges = false;
         }
 
 
@@ -90,9 +92,31 @@ namespace CodeCentPrototype
         /// <param name="e">Re-pass e from original event handler.</param>
         public void selectedStudentChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Populate selected tab
-            this.SelectedStudent = windowRef.listStudents.SelectedItem as Student;
-            this.ProfileTabChanged(sender, e);
+            if (PromptForSaveChanges)
+            {
+                MessageBoxResult result = MessageBox.Show("Save changes to student?", "Save Changes", MessageBoxButton.YesNoCancel);
+                if (result == MessageBoxResult.Yes)
+                {
+                    //FIXME: Need SQL code/dbConn method to update tables here
+                    PromptForSaveChanges = false;
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    PromptForSaveChanges = false;
+                    //Populate selected tab
+                    this.SelectedStudent = windowRef.listStudents.SelectedItem as Student;
+                    this.ProfileTabChanged(sender, e);
+                }
+                else if (result == MessageBoxResult.Cancel)
+                    return;
+            }
+            else
+            {
+                //Populate selected tab
+                this.SelectedStudent = windowRef.listStudents.SelectedItem as Student;
+                this.ProfileTabChanged(sender, e);
+            }
+                 
         }
 
 
@@ -108,7 +132,20 @@ namespace CodeCentPrototype
             if (SelectedStudent == null)
                 return;
 
-            else if (windowRef.ProfileTabControl.SelectedIndex == PROFILE_TAB_INDEX)
+            bool saveChanges = PromptForSaveChanges; //Remember state before we change things
+
+            if (PromptForSaveChanges)
+            {
+                MessageBoxResult result = MessageBox.Show("Save changes to student?", "Save Changes", MessageBoxButton.YesNoCancel);
+                if (result == MessageBoxResult.Yes)
+                {
+                    //FIXME: Need SQL code/dbConn method to update tables here
+                }
+                else if (result == MessageBoxResult.Cancel)
+                    return;
+            }
+
+            if (windowRef.ProfileTabControl.SelectedIndex == PROFILE_TAB_INDEX)
                 PopulateProfileTab();
 
             else if (windowRef.ProfileTabControl.SelectedIndex == DETAILS_TAB_INDEX)
@@ -119,6 +156,8 @@ namespace CodeCentPrototype
 
             else if (windowRef.ProfileTabControl.SelectedIndex == ATTACHMENTS_TAB_INDEX)
                 PopulateAttachmentsTab();
+
+            PromptForSaveChanges = saveChanges; //restore state
         }
 
         /// <summary>
@@ -208,6 +247,12 @@ namespace CodeCentPrototype
         {
             windowRef.textComments.Text = SelectedStudent.Notes ?? "";
             //Load attachment list here once we have that functionality
+        }
+
+
+        public void FieldTextChanged()
+        {
+            this.PromptForSaveChanges = true;
         }
     }
 }

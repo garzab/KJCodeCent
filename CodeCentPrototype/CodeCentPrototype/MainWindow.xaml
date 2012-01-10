@@ -106,14 +106,14 @@
                             <Label Content="Cell Phone" FontSize="16" HorizontalAlignment="Left" Margin="10,128,0,0" Name="labelCellPhone" VerticalAlignment="Top" Width="84.523" />
                             <Label Content="Email Address" FontSize="16" HorizontalAlignment="Left" Margin="10,206,0,0" Name="labelEmailAddress" VerticalAlignment="Top" />
                             <Label Content="CWU Email Address" FontSize="16" HorizontalAlignment="Left" Margin="10,168,0,0" Name="labelCWUEmailAddress" VerticalAlignment="Top" />
-                            <TextBox Height="28" Margin="81,13,449,0" Name="textAddress" TextWrapping="Wrap" VerticalAlignment="Top" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="62,51,0,0" Name="textCity" TextWrapping="Wrap" VerticalAlignment="Top" Width="274.568" />
-                            <TextBox Height="28" Margin="467,53,0,0" Name="textState" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="41" />
-                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,54,197,0" Name="textZIPCode" TextWrapping="Wrap" VerticalAlignment="Top" Width="107.478" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="128,91,0,0" Name="textHomePhone" TextWrapping="Wrap" VerticalAlignment="Top" Width="208.222" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="116,129,0,0" Name="textCellPhone" TextWrapping="Wrap" VerticalAlignment="Top" Width="220.445" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="172,168,0,0" Name="textCWUEmailAddress" TextWrapping="Wrap" VerticalAlignment="Top" Width="315.442" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="128,207,0,0" Name="textEmailAddress" TextWrapping="Wrap" VerticalAlignment="Top" Width="359.442" />
+                            <TextBox Height="28" Margin="81,13,449,0" Name="textAddress" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="62,51,0,0" Name="textCity" TextWrapping="Wrap" VerticalAlignment="Top" Width="274.568" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" Margin="467,53,0,0" Name="textState" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="41" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,54,197,0" Name="textZIPCode" TextWrapping="Wrap" VerticalAlignment="Top" Width="107.478" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="128,91,0,0" Name="textHomePhone" TextWrapping="Wrap" VerticalAlignment="Top" Width="208.222" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="116,129,0,0" Name="textCellPhone" TextWrapping="Wrap" VerticalAlignment="Top" Width="220.445" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="172,168,0,0" Name="textCWUEmailAddress" TextWrapping="Wrap" VerticalAlignment="Top" Width="315.442" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="128,207,0,0" Name="textEmailAddress" TextWrapping="Wrap" VerticalAlignment="Top" Width="359.442" TextChanged="StudentField_TextChanged" />
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupStudentInformation" Header="Student Information" VerticalAlignment="Top" Margin="8,8,8,0" Height="Auto" FontSize="16" Grid.ColumnSpan="2">
@@ -128,11 +128,11 @@
                             <Label Content="Middle Initial" Margin="100,13,6,0" Name="labelMiddleInitial" VerticalAlignment="Top" Width="118" Grid.Column="1" />
                             <Label Content="Birthdate" HorizontalAlignment="Left" Margin="100,52,0,0" Name="labelBirthday" VerticalAlignment="Top" Width="78.934" Grid.Column="1" />
                             <Label Content="Student ID" FontSize="16" HorizontalAlignment="Left" Margin="12,89,0,0" Name="labelStudentID" VerticalAlignment="Top" />
-                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,55,181,0" Name="textLastName" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" />
-                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,17,181,0" Name="textFirstName" TextWrapping="Wrap" VerticalAlignment="Top" Width="246.944" Grid.ColumnSpan="2" />
-                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,92,181,0" Name="textStudentID" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" />
-                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,16,280,0" Name="textMiddleInitial" TextWrapping="Wrap" VerticalAlignment="Top" Width="98.836" Grid.Column="2" />
-                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,52,280,0" Name="textBirthday" TextWrapping="Wrap" VerticalAlignment="Top" Width="128.836" Grid.ColumnSpan="2" Grid.Column="1" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,55,181,0" Name="textLastName" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,17,181,0" Name="textFirstName" TextWrapping="Wrap" VerticalAlignment="Top" Width="246.944" Grid.ColumnSpan="2" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,92,181,0" Name="textStudentID" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,16,280,0" Name="textMiddleInitial" TextWrapping="Wrap" VerticalAlignment="Top" Width="98.836" Grid.Column="2" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,52,280,0" Name="textBirthday" TextWrapping="Wrap" VerticalAlignment="Top" Width="128.836" Grid.ColumnSpan="2" Grid.Column="1" TextChanged="StudentField_TextChanged" />
                         </Grid>
                     </GroupBox>
                 </Grid>
@@ -144,9 +144,9 @@
                         <Grid>
                             <Label Content="College GPA" FontSize="16" HorizontalAlignment="Left" Margin="519,5,0,0" Name="labelCollegeGPA" VerticalAlignment="Top" />
                             <Label Content="HS GPA" FontSize="16" HorizontalAlignment="Left" Margin="542,0,0,128" Name="labelHSGPA" VerticalAlignment="Bottom" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="623,0,0,171" Name="textGPA" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="98.847" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="623,0,0,128" Name="textHSGPA" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="98.847" />
-                            <TextBox x:Name="textDateOfDirectorAction" Margin="0,0,191,93" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="197.847" Height="28" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="623,0,0,171" Name="textGPA" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="98.847" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="623,0,0,128" Name="textHSGPA" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="98.847" TextChanged="StudentField_TextChanged" />
+                            <TextBox x:Name="textDateOfDirectorAction" Margin="0,0,191,93" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="197.847" Height="28" TextChanged="StudentField_TextChanged" />
                             <Label x:Name="labelDateOfDirectorAction" Content="Date" HorizontalAlignment="Left" Margin="466,0,0,94" VerticalAlignment="Bottom" FontSize="16" />
                         </Grid>
                     </GroupBox>
@@ -163,34 +163,34 @@
                     <Label x:Name="labelTransfer" Content="Transfer" Margin="461.693,159.42,478.44,0" VerticalAlignment="Top"/>
                     <Label x:Name="labelFirstYearOrUDSE_Copy" Content="Core or Hybrid" HorizontalAlignment="Left" Margin="16,201.38,0,0" VerticalAlignment="Top" FontSize="16"/>
                     <Label x:Name="labelDirectorAction" Content="Director Action" Margin="21,0,0,129" VerticalAlignment="Bottom" FontSize="16" HorizontalAlignment="Left" Width="116.947"/>
-                    <TextBox x:Name="textQuarterEnteredCWU" Margin="192.077,83.28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="127.31" Height="28"/>
-                    <TextBox x:Name="textQuarterEnteredDHC" Margin="0,83.28,259.98,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11" Height="28"/>
-                    <TextBox x:Name="textAI" Margin="63,336,541,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="337" />
-                    <TextBox x:Name="textSAT" Margin="63,378,542,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="336" />
+                    <TextBox x:Name="textQuarterEnteredCWU" Margin="192.077,83.28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="127.31" Height="28" TextChanged="StudentField_TextChanged" />
+                    <TextBox x:Name="textQuarterEnteredDHC" Margin="0,83.28,259.98,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11" Height="28" TextChanged="StudentField_TextChanged" />
+                    <TextBox x:Name="textAI" Margin="63,336,541,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="337" TextChanged="StudentField_TextChanged" />
+                    <TextBox x:Name="textSAT" Margin="63,378,542,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="336" TextChanged="StudentField_TextChanged" />
                     <TextBox x:Name="textACT" Margin="64.68,414.68,468.027,422.08" TextWrapping="Wrap"/>
-                    <ComboBox x:Name="comboClassStanding" Margin="140.083,41.32,0,0" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Left" Width="280.537" Height="28" IsEditable="True">
+                    <ComboBox x:Name="comboClassStanding" Margin="140.083,41.32,0,0" VerticalAlignment="Top" Background="{x:Null}" HorizontalAlignment="Left" Width="280.537" Height="28" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="1 First Year"/>
                         <ComboBoxItem Content="2 Sophomore"/>
                         <ComboBoxItem Content="3 Junior"/>
                         <ComboBoxItem Content="4 Senior"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboCurrentCWUStudent" Margin="192.077,120.74,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="127.31" IsEditable="True">
+                    <ComboBox x:Name="comboCurrentCWUStudent" Margin="192.077,120.74,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="127.31" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="Yes"/>
                         <ComboBoxItem Content="No"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboFirstYearorUDSE" Margin="172.783,162.7,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="247.837" IsEditable="True">
+                    <ComboBox x:Name="comboFirstYearorUDSE" Margin="172.783,162.7,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="247.837" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="Upper-Division A&amp;H"/>
                         <ComboBoxItem Content="Upper-Division SHP"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboCoreOrHybrid" Margin="140.083,204.66,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="280.537" IsEditable="True">
+                    <ComboBox x:Name="comboCoreOrHybrid" Margin="140.083,204.66,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="28" HorizontalAlignment="Left" Width="280.537" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="DHC Breadth"/>
                         <ComboBoxItem Content="CWU Breadth"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboTransfer" Margin="0,162.42,382.59,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85.81" Background="{x:Null}" IsEditable="True">
+                    <ComboBox x:Name="comboTransfer" Margin="0,162.42,382.59,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85.81" Background="{x:Null}" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="Yes"/>
                         <ComboBoxItem Content="No"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboCWUAppStatus" Margin="0,42.04,289.98,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11" Background="{x:Null}" IsEditable="True">
+                    <ComboBox x:Name="comboCWUAppStatus" Margin="0,42.04,289.98,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11" Background="{x:Null}" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="AP"/>
                         <ComboBoxItem Content="AD"/>
                         <ComboBoxItem Content="PM"/>
@@ -198,15 +198,15 @@
                         <ComboBoxItem Content="Cancel-DHC"/>
                         <ComboBoxItem Content="Cancel-CWU"/>
                     </ComboBox>
-                    <TextBox x:Name="textDateReceived" Margin="0,121.46,309.98,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11"/>
-                    <ComboBox x:Name="comboDirectorAction" Margin="144,0,0,132" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="256.363" Background="{x:Null}" Height="28" IsEditable="True">
+                    <TextBox x:Name="textDateReceived" Margin="0,121.46,309.98,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108.11" TextChanged="StudentField_TextChanged" />
+                    <ComboBox x:Name="comboDirectorAction" Margin="144,0,0,132" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="256.363" Background="{x:Null}" Height="28" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="Warning"/>
                         <ComboBoxItem Content="Suspended"/>
                         <ComboBoxItem Content="Accepted"/>
                         <ComboBoxItem Content="Denied"/>
                     </ComboBox>
                     <Label x:Name="labelGraduatedOrWithdrawn" Content="Status in Program" HorizontalAlignment="Left" Margin="16,243.84,0,0" FontSize="16" Height="32" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="comboGraduatedOrWithdrawn" Margin="172.783,247.84,0,0" Background="{x:Null}" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="247.837" IsEditable="True">
+                    <ComboBox x:Name="comboGraduatedOrWithdrawn" Margin="172.783,247.84,0,0" Background="{x:Null}" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="247.837" IsEditable="True" SelectionChanged="StudentField_Changed">
                         <ComboBoxItem Content="Completed Breath Requirements"/>
                         <ComboBoxItem Content="Graduated"/>
                         <ComboBoxItem Content="Withdrawn">
@@ -229,7 +229,7 @@
                 <Grid Background="White">
                     <GroupBox Name="SHPCourseGroupbox" Header="SHP Courses" Margin="9,421,7,0" Height="95.78" VerticalAlignment="Top">
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="72,19,0,0" Name="comboSHP399" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="72,19,0,0" Name="comboSHP399" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -244,7 +244,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="264,19,0,0" Name="comboSHP401" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="264,19,0,0" Name="comboSHP401" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -259,7 +259,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="458,21,435,0" Name="comboSHP497" VerticalAlignment="Top" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="458,21,435,0" Name="comboSHP497" VerticalAlignment="Top" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="Pass" />
                                 <ComboBoxItem Content="Fail" />
                             </ComboBox>
@@ -273,25 +273,25 @@
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Label Content="Current Quarter GPA" FontSize="16" HorizontalAlignment="Left" Margin="10,10,0,0" Name="labelCurrentQuarterGPA" VerticalAlignment="Top" />
                             <Label Content="Prior Quarter GPA" FontSize="16" HorizontalAlignment="Right" Margin="0,10,236,0" Name="labelPriorQuarterGPA" VerticalAlignment="Top" Width="148.1" />
-                            <TextBox Height="28" HorizontalAlignment="Left" Margin="170,14,0,0" Name="textCurrentQuarterGPA" TextWrapping="Wrap" VerticalAlignment="Top" Width="77.071" />
-                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,11,152,0" Name="textPriorQuarterGPA" TextWrapping="Wrap" VerticalAlignment="Top" Width="79.9" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="170,14,0,0" Name="textCurrentQuarterGPA" TextWrapping="Wrap" VerticalAlignment="Top" Width="77.071" TextChanged="StudentField_TextChanged" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,11,152,0" Name="textPriorQuarterGPA" TextWrapping="Wrap" VerticalAlignment="Top" Width="79.9" TextChanged="StudentField_TextChanged" />
                             <Label Content="Cumulative GPA" FontSize="16" HorizontalAlignment="Left" Margin="331,11,0,0" Name="labelCummulativeGPA" VerticalAlignment="Top" />
-                            <TextBox Height="28" Margin="459,13,443,0" Name="textCumulativeGPA" TextWrapping="Wrap" VerticalAlignment="Top" />
+                            <TextBox Height="28" Margin="459,13,443,0" Name="textCumulativeGPA" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="StudentField_TextChanged" />
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="groupGPADetail1" Header="DHC Courses" Margin="8,95,8,0" FontSize="16" Height="324" VerticalAlignment="Top">
                         <Grid Name="DHCCourseGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Label Content="Math Requirement Complete" FontSize="16" HorizontalAlignment="Left" Margin="41,0,0,28" Name="labelMathRequirement" VerticalAlignment="Bottom" />
                             <Label Content="Language Requirement Complete" FontSize="16" HorizontalAlignment="Left" Margin="13,0,0,76" Name="labelLanguageRequirement" VerticalAlignment="Bottom" />
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="265,0,0,31" Name="comboMathRequirement" VerticalAlignment="Bottom" Width="85.844" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="265,0,0,31" Name="comboMathRequirement" VerticalAlignment="Bottom" Width="85.844" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="Yes" />
                                 <ComboBoxItem Content="No" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="265,0,0,75" Name="comboLanguageRequirement" VerticalAlignment="Bottom" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="265,0,0,75" Name="comboLanguageRequirement" VerticalAlignment="Bottom" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="Yes" />
                                 <ComboBoxItem Content="No" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,12,0,0" Name="combo140" VerticalAlignment="Top" Width="85" IsEditable="True" DataContext="{Binding}" ItemsSource="{Binding}">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,12,0,0" Name="combo140" VerticalAlignment="Top" Width="85" IsEditable="True" DataContext="{Binding}" ItemsSource="{Binding}" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -306,7 +306,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,58,0,0" Name="combo141" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,58,0,0" Name="combo141" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -321,7 +321,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,102,0,0" Name="combo150" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,102,0,0" Name="combo150" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -336,7 +336,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,142,0,0" Name="combo151" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="58,142,0,0" Name="combo151" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -351,7 +351,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,142,0,0" Name="combo251" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,142,0,0" Name="combo251" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -366,7 +366,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,100,0,0" Name="combo250" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,100,0,0" Name="combo250" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -381,7 +381,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,58,0,0" Name="combo161" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,58,0,0" Name="combo161" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -396,7 +396,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,12,0,0" Name="combo160" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Left" Margin="250,12,0,0" Name="combo160" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -411,7 +411,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,12,384,0" Name="combo260" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,12,384,0" Name="combo260" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -426,7 +426,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,58,384,0" Name="combo261" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,58,384,0" Name="combo261" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -441,7 +441,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,102,0,0" Name="combo270" VerticalAlignment="Top" Width="85" HorizontalAlignment="Left" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,102,0,0" Name="combo270" VerticalAlignment="Top" Width="85" HorizontalAlignment="Left" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -456,7 +456,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" Margin="444,142,384,0" Name="combo301" VerticalAlignment="Top" HorizontalAlignment="Left"   Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" Margin="444,142,384,0" Name="combo301" VerticalAlignment="Top" HorizontalAlignment="Left"   Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -471,11 +471,11 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,144,235,0" Name="combo497" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,144,235,0" Name="combo497" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="Pass" />
                                 <ComboBoxItem Content="Fail" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,99,235,0" Name="combo401" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,99,235,0" Name="combo401" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -490,7 +490,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,55,235,0" Name="combo399" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,55,235,0" Name="combo399" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -505,7 +505,7 @@
                                 <ComboBoxItem Content="F" />
                                 <ComboBoxItem Content="I" />
                             </ComboBox>
-                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,10,235,0" Name="combo380" VerticalAlignment="Top" Width="85" IsEditable="True">
+                            <ComboBox Background="{x:Null}" Height="28" HorizontalAlignment="Right" Margin="0,10,235,0" Name="combo380" VerticalAlignment="Top" Width="85" IsEditable="True" SelectionChanged="StudentField_Changed">
                                 <ComboBoxItem Content="A" />
                                 <ComboBoxItem Content="A-" />
                                 <ComboBoxItem Content="B+" />
@@ -547,13 +547,13 @@
                         <ColumnDefinition Width="0.858*"/>
                     </Grid.ColumnDefinitions>
                     <GroupBox x:Name="groupComments" Header="Comments" Margin="8,8,8,0" VerticalAlignment="Top" Height="298.46" Grid.ColumnSpan="2">
-                        <TextBox Name="textComments" TextWrapping="Wrap" />
+                        <TextBox Name="textComments" TextWrapping="Wrap" TextChanged="StudentField_TextChanged" />
                     </GroupBox>
                     <GroupBox x:Name="groupAttachedFiles" Header="Attached Files" Margin="8,310.46,8,369.22" Grid.ColumnSpan="2">
                         <ListBox x:Name="listFiles"/>
                     </GroupBox>
                     <GroupBox Header="Attached Files" Height="255" Margin="8,312,8,0" Name="groupBox1" VerticalAlignment="Top" Grid.ColumnSpan="2">
-                        <TextBox Name="textBox1" TextWrapping="Wrap" />
+                        <TextBox Name="textBox1" TextWrapping="Wrap" TextChanged="StudentField_TextChanged" />
                     </GroupBox>
                 </Grid>
             </TabItem>
