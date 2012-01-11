@@ -62,9 +62,9 @@ namespace CodeCentPrototype
 
             if (dbConn.Open())
             {
-                DataTable info = dbConn.executeQuery("StudentInfo", null, null);
-                DataTable grades = dbConn.executeQuery("grades", null, null);
-                DataTable stats = dbConn.executeQuery("StudentStats", null, null);
+                DataTable info = dbConn.oldQuery("StudentInfo", null, null);
+                DataTable grades = dbConn.oldQuery("grades", null, null);
+                DataTable stats = dbConn.oldQuery("StudentStats", null, null);
 
 				/* John's sql join fix					
 					DataTable GetStudentsForYear = dbConn.executeQuery(null, 2010);
