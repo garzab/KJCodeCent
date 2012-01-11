@@ -14,9 +14,9 @@ namespace CodeCentPrototype
 
         private static SqlConnection dbConn;
 
-        /// <summary>
-        /// Constructor for DBConn class
-        /// </summary>
+        // <summary>
+        // Constructor for DBConn class
+        // </summary>
         public DBController()
         {
             // Create database connection
@@ -32,10 +32,10 @@ namespace CodeCentPrototype
         }
 
 
-        /// <summary>
-        /// Gets current db status 
-        /// </summary>
-        /// <returns>Bool indicating connection opened (true) or closed (false)</returns>
+        // <summary>
+        // Gets current db status 
+        // </summary>
+        // <returns>Bool indicating connection opened (true) or closed (false)</returns>
         public bool IsOpen()
         {
             if (dbConn.State == ConnectionState.Open)
@@ -43,11 +43,11 @@ namespace CodeCentPrototype
             return false;
         }
 
-        /// <summary>
-        /// Returns the schema for the table specified in the parameter
-        /// </summary>
-        /// <returns>DataTable of schema</returns>
-        /// <exception cref="System.Data.SqlClient.SqlException"></exception>
+        // <summary>
+        // Returns the schema for the table specified in the parameter
+        // </summary>
+        // <returns>DataTable of schema</returns>
+        // <exception cref="System.Data.SqlClient.SqlException"></exception>
         public DataTable GetSchema(string table)
         {
             if (dbConn.State == ConnectionState.Open)
@@ -62,11 +62,11 @@ namespace CodeCentPrototype
         }
 
 
-        /// <summary>
-        /// Attempts to open the associated dbConn
-        /// </summary>
-        /// <returns>Bool indicating success or failure</returns>
-        /// <exception cref="System.Data.SqlClient.SqlException"></exception>
+        // <summary>
+        // Attempts to open the associated dbConn
+        // </summary>
+        // <returns>Bool indicating success or failure</returns>
+        // <exception cref="System.Data.SqlClient.SqlException"></exception>
         public bool Open()
         {
             if (this.IsOpen())
@@ -86,11 +86,11 @@ namespace CodeCentPrototype
 
         }
 
-        /// <summary>
-        /// Attempts to close the associated dbConn
-        /// </summary>
-        /// <returns>Bool indicating success or failure</returns>
-        /// <exception cref="System.Data.SqlClient.SqlException"></exception>
+        // <summary>
+        // Attempts to close the associated dbConn
+        // </summary>
+        // <returns>Bool indicating success or failure</returns>
+        // <exception cref="System.Data.SqlClient.SqlException"></exception>
         public bool Close()
         {
             if (dbConn.State == ConnectionState.Closed)
@@ -108,15 +108,43 @@ namespace CodeCentPrototype
             }
         }
 
-        /// <summary>
-        /// Executes a query on the dbConn instance
-        /// </summary>
-        /// <param name="table">sql table to query</param>
-        /// <param name="parameters">string array of parameters (columns)</param>
-        /// <param name="condition">where condition</param>
-        /// <returns>DataTable with results of query</returns>
-        /// <exception cref="System.Data.SqlClient.SqlException"></exception>
-        public DataTable executeQuery(string table, string[] parameters, string condition)
+        // <summary>
+        // Executes a query on the dbConn instance
+        // </summary>
+        // <param name="table">sql table to query</param>
+        // <param name="parameters">string array of parameters (columns)</param>
+        // <param name="condition">where condition</param>
+        // <returns>DataTable with results of query</returns>
+        // <exception cref="System.Data.SqlClient.SqlException"></exception>
+        public DataTable executeQuery(string[] parameters, int condition)
+        {
+            try
+            {
+                string sqlString = "SELECT ";
+                if (parameters == null)
+                    sqlString += "*";
+                else
+                    sqlString += string.Join(",", parameters);
+                    sqlString += " FROM (StudentInfo left join StudentStats on StudentInfo.studentID = StudentStats.studentID) " +
+                "left join Grades on StudentInfo.studentID = Grades.studentID";
+                SqlCommand command = new SqlCommand(sqlString, dbConn);
+                command.Prepare();
+
+                DataTable resultsTable = new DataTable();
+                SqlDataAdapter dbAdpt = new System.Data.SqlClient.SqlDataAdapter(command);
+                dbAdpt.Fill(resultsTable);
+                return resultsTable;
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                MessageBox.Show("DBController executeQuery failure: " + e.Message); 
+                throw;
+            }
+
+        }
+
+        // OLD QUERY. Kevin requested that we save this.
+        public DataTable oldQuery(string table, string[] parameters, string condition)
         {
             try
             {
@@ -140,7 +168,7 @@ namespace CodeCentPrototype
             }
             catch (System.Data.SqlClient.SqlException e)
             {
-                MessageBox.Show("DBController executeQuery failure: " + e.Message); 
+                MessageBox.Show("DBController executeQuery failure: " + e.Message);
                 throw;
             }
 

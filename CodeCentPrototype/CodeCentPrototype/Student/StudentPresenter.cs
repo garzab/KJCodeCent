@@ -66,6 +66,18 @@ namespace CodeCentPrototype
                 DataTable grades = dbConn.executeQuery("grades", null, null);
                 DataTable stats = dbConn.executeQuery("StudentStats", null, null);
 
+				/* John's sql join fix					
+					DataTable GetStudentsForYear = dbConn.executeQuery(null, 2010);
+
+					//studID = 34623462
+					//desiredItem = "c_5_dhc140";
+					//SelectStudentInfo(GetStudentsForYear, studID, desiredItem);
+
+					String testCollection = SelectStudentInfo(GetStudentsForYear, 23454984, "birthday");
+					MessageBox.Show(testCollection);
+				*/
+				
+				
                 dbConn.Close();
 
                 /*
@@ -88,6 +100,30 @@ namespace CodeCentPrototype
 
         }
 
+
+        // Accepts DataTable, studentID and desired row. 
+        // Returns requested value.
+        // ADD STRING TO RETURN TYPE WHEN READY TO RECEIEVE VALUE
+        public string SelectStudentInfo(DataTable students, int studentID, string desiredColumn)
+        {
+            int sid = studentID;
+            string COLUMNNAMEMOFO = desiredColumn;
+            string result = "";
+
+                try
+                {
+                    DataRow[] FindStudent;
+                    FindStudent = students.Select("studentID='" + sid + "'");
+                    DataRow Student = FindStudent[0];
+                    result = Student[COLUMNNAMEMOFO].ToString();
+                }
+                catch {
+                MessageBox.Show("No Student record with SID " + sid + " was found");
+                }
+            return result;  
+        }
+		
+		
         /// <summary>
         /// Event responder for student selection events from the UI. Re-populates selected tab.
         /// </summary>
